@@ -1,0 +1,31 @@
+<h1><%= @post.title %></h1>
+
+<% @post.body&.lines&.each do |line| %>
+  <p><%= line %></p>
+<% end %>
+
+<% if @post.user.present? %>
+  by <%= link_to @post.user_name, @post.user %>
+<% end %>
+
+<ul>
+  <li>
+    <strong>ID</strong>
+    <br>
+    <%= @post.id %></li>
+  </li>
+  <li>
+    <strong>Created at</strong>
+    <br>
+    <%= @post.created_at %>
+  </li>
+  <li>
+    <strong>Last updated at</strong>
+    <br>
+    <%= @post.updated_at %>
+  </li>
+</ul>
+
+<%= link_to "Edit", edit_post_path(@post) %>
+<%= link_to "Destroy", @post, method: :delete %>
+

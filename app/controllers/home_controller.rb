@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-    def index
-        @name = "Catarina"
-    end
+  def index
+    @name = "Pedro"
+  end
 end
